@@ -98,7 +98,7 @@ function hide_off() {
             correctAnswer: "c"
         },
         {
-            question: "When the WW2 ended?",
+            question: "2. When the WW2 ended?",
             answers: {
                 a: "1947",
                 b: "1944",
@@ -107,13 +107,31 @@ function hide_off() {
             correctAnswer: "c"
         },
         {
-            question: "Which two birds are the topic of a discussion in Shakespeare's Romeo and Juliet?",
+            question: "3. Which two birds are the topic of a discussion in Shakespeare's Romeo and Juliet?",
             answers: {
                 a: "Skylark and nightingale",
                 b: "Robin and dove",
                 c: "Skylark and robin"
             },
             correctAnswer: "a"
+        },
+        {
+            question: "4. Which planet is the closest to the Sun?",
+            answers: {
+                a: "Mars",
+                b: "Mercury",
+                c: "Earth"
+            },
+            correctAnswer: "b"
+        },
+        {
+            question: "5. What is the most spoken language in the world?",
+            answers: {
+                a: "English",
+                b: "Chinese",
+                c: "Spanish"
+            },
+            correctAnswer: "b"
         }
     ];
 
@@ -124,6 +142,3 @@ function hide_off() {
     submitButton.addEventListener('click', showResults);
 
 })();
-function check_score() {
-    alert("Checking your score...");
-}
