@@ -156,6 +156,7 @@ function hide_off() {
 
 
 })();
+
 function start_again_button() {
     document.getElementById("start_again_btn").style.visibility = "visible";
 }
