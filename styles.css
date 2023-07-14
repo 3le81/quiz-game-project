@@ -12,10 +12,6 @@ body {
     float: right;
 }
 
-#clock:hover {
-    font-size: 17px;
-    color: limegreen;
-}
 
 h1 {
     text-transform: uppercase;
@@ -43,18 +39,16 @@ h2 {
 .form_questions {
     visibility: hidden;
     margin-top: -100px;
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    line-height: 3rem;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    line-height: 4rem;
     margin-left: 2rem;
-
 }
 
 label {
     text-transform: capitalize;
     font-size: 1.8rem;
-    padding: 5px;
-    margin: 5px;
+    padding: 20px;
 }
 
 button {
@@ -67,16 +61,23 @@ button {
     font-size: 1.5rem;
 }
 
+#results {
+    background-color: yellow;
+    width: 20%;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-left: 3rem;
+}
 
-.footer {
-    margin-top: 10rem;
+.icon {
+    width: 50px;
 }
 
 @media screen and (max-width: 700px) {
 
     h1,
     h2 {
-        font-size: 6vw;
+        font-size: 1.5rem;
         display: inline-flex;
         margin: auto;
     }
@@ -90,10 +91,37 @@ button {
         visibility: hidden;
     }
 
+    section>.form_questions {
+        font-size: 0.9rem;
+        margin: 30px;
+    }
+
+}
+
+#start_again_btn {
+    background-color: limegreen;
+    visibility: hidden;
+    border: none;
+}
+
+
+/* END MEDIA QUERY */
+
+.footer {
+    margin-top: 2rem;
 }
 
 .footer-nav>ul>li {
     display: inline;
     text-decoration: none;
-    padding: 5px;
+    padding: 15px;
+    margin-left: -25px;
+}
+
+.footer-copyright {
+    margin-left: 25px;
+}
+
+.footer-copyright>p {
+    margin-bottom: 10px;
 }

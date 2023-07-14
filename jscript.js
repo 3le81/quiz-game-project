@@ -45,14 +45,16 @@ function hide_off() {
             }
         );
 
-        // finally combine our output list into one string of HTML and put it on the page
-        quizContainer.innerHTML = output.join('');
+        // combine the output list into one string of HTML and put it on the page
+        quizContainer.innerHTML = output.join(' ');
     }
 
     function showResults() {
 
-        // gather answer containers from our quiz
+        // gather answer containers from the quiz
         const answerContainers = quizContainer.querySelectorAll('.answers');
+        const questionContainer = quizContainer.querySelectorAll('.question');
+
 
         // keep track of user's answers
         let numCorrect = 0;
@@ -69,20 +71,30 @@ function hide_off() {
             if (userAnswer === currentQuestion.correctAnswer) {
                 // add to the number of correct answers
                 numCorrect++;
+                start_again_button();
 
                 // color the answers green
-                answerContainers[questionNumber].style.color = 'limegreen';
+                // answerContainers[questionNumber].style.color = 'limegreen';
+                questionContainer[questionNumber].style.color = 'limegreen';
+                start_again_button();
+
+
             }
             // if answer is wrong or blank
             else {
                 // color the answers red
-                answerContainers[questionNumber].style.color = 'red';
+                // answerContainers[questionNumber].style.color = 'red';
+                questionContainer[questionNumber].style.color = 'red';
+                start_again_button();
+
             }
         });
 
         // show number of correct answers out of total
         resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+
     }
+
 
     const quizContainer = document.getElementById('quiz');
     const resultsContainer = document.getElementById('results');
@@ -141,4 +153,9 @@ function hide_off() {
     // Event listeners
     submitButton.addEventListener('click', showResults);
 
+
+
 })();
+function start_again_button() {
+    document.getElementById("start_again_btn").style.visibility = "visible";
+}
