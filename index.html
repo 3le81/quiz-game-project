@@ -10,57 +10,55 @@
 </head>
 
 <body>
-    <header>
-        <span id="clock">Thu Jul 13 2023 16:11:17 GMT+0100 (British Summer Time)</span>
-        <br />
+    <header role="banner">
+        <div id="clock" class="top-right"></div>
         <h1>Guess it!</h1>
         <h2>Can you find all the right answers? Test your knowledge and check your score!</h2>
-
     </header>
-    <main>
+
+    <main role="main">
         <section>
-
-            <body>
-
-                <button id="start_button" onclick="start_game(), hide_off()">Start The Game</button>
-                <br />
-                <section class="form_questions" id="form_questions">
-                    <div id="quiz"></div>
-                    <!-- <img src="/true_icon1.png" id="green_icon" class="icon" alt="correct green tick"></img>
-                    <img src="/wrong_icon1.png" id="red_icon" class="icon" alt="wrong red tick"></img> -->
-
-
-                    <button id="submit">Submit Quiz</button>
-                    <input type="button" id="start_again_btn" value="Start Again"
-                        onclick="window.location.href='https://3le81.github.io/quiz-game-project/'">
-                    <div id="results"></div>
-                    <script type="text/javascript" src="jscript.js">
-                    </script>
-                </section>
-
-            </body>
-
+            <button id="start_button" onclick="start_game(), hide_off()">Start The Game</button>
+            <br />
+            <section class="form_questions" id="form_questions">
+                <div id="quiz"></div>
+                <button id="submit">Submit Quiz</button>
+                <input type="button" id="start_again_btn" value="Start Again"
+                    onclick="window.location.href='index.html'">
+                <div id="results" aria-live="polite"></div>
+                <script type="text/javascript" src="jscript.js"></script>
+            </section>
         </section>
     </main>
     <br>
-    <!--footer nav-->
-    <div class="footer">
-        <div class="footer-nav">
-            <ul>
-                <li><a href="/index.html">About</a></li>
-                <li><a href="https://www.linkedin.com/in/elena-pagano-24000075/" target="_blank">Contact</a></li>
-            </ul>
+
+    <footer role="contentinfo">
+        <div class="footer">
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="/index.html">About</a></li>
+                    <li><a href="https://www.linkedin.com/in/elena-pagano-24000075/" target="_blank">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy;2023 Created by <a href="https://github.com/3le81" target="_blank">Elena</a></p>
+            </div>
         </div>
-        <!--/footer nav-->
-        <!--footer copyright-->
-        <div class="footer-copyright">
-            <!-- <p> **This is realized for my son Leonardo, as genius as the man he takes the name from! :) </p> -->
-            <p>&copy;2023 Created by
-                <a href="https://github.com/3le81" target="_blank">Elena</a>
-            </p>
-        </div>
-    </div>
-    <!--/footer copyright-->
+    </footer>
+
+    <script>
+        // Update the clock with the current UK time
+        function updateClock() {
+            const clockElement = document.getElementById("clock");
+            const options = { timeZone: "Europe/London", weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "numeric", second: "numeric" };
+            const ukTime = new Date().toLocaleString("en-GB", options);
+            clockElement.textContent = ukTime;
+        }
+
+        // Update the clock every second
+        setInterval(updateClock, 1000);
+
+    </script>
 </body>
 
 </html>
